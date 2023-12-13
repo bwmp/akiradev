@@ -1,80 +1,83 @@
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-
-:root {
-  --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
-  --qwik-dark-text: #ffffff;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 html {
-  line-height: 1;
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  overflow: overlay;
+  background-color: hsl(0deg, 0%, 5%);
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  line-height: inherit;
+* { scroll-behavior: smooth; }
+*::-webkit-scrollbar {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background-color: #00000000;
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #ffffff20;
+  border-radius: 2px;
 }
 
-/**
- * WHAT IS THIS FILE?
- *
- * Globally applied styles. No matter which components are in the page or matching route,
- * the styles in here will be applied to the Document, without any sort of CSS scoping.
- *
- */
-html {
-  -webkit-text-size-adjust: 100%;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+/* NAVBAR TRANSITION */
+nav {
+  view-transition-name: nav;
 }
 
-body {
-  padding: 0;
-  line-height: inherit;
+/* MAIN TRANSITION */
+main {
+  view-transition-name: root;
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-bottom;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-top;
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; }
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+@keyframes slide-from-top {
+  from {
+    transform: translateY(30px);
+    scale: 0.95;
+  }
+}
+@keyframes slide-to-bottom {
+  to {
+    transform: translateY(-30px);
+    scale: 0.95;
+  }
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  57% { color: blue; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+
+.animate-rainbow {
+  animation: rainbow 4s linear infinite;
+}
+
+.shadow-outline {
+  filter: drop-shadow(5px 0px 0px #000000) drop-shadow(-5px 0px 0px #000000) drop-shadow(0px 5px 0px #000000) drop-shadow(0px -5px 0px #000000);
 }
