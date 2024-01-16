@@ -5,7 +5,7 @@ import Card from "~/components/elements/Card";
 export default component$(() => {
   return (
     <div>
-      <header class="text-bold text-white text-center py-4" style={{ minHeight: 'calc(50dvh - 64px)' }}>
+      <header class="text-bold text-white text-center py-4">
         <h1 class="font-bold text-2xl sm:text-5xl">
           AkiraDev
         </h1>
@@ -17,8 +17,7 @@ export default component$(() => {
           <a href="https://api.statusbadges.me/openspotify/798738506859282482" target="_blank" rel="noopener"><img width="301" height="28" src="https://api.statusbadges.me/badge/spotify/798738506859282482?style=for-the-badge" alt="spotify" /></a>
         </p>
       </header>
-
-      <section class="flex flex-col mx-auto max-w-6xl px-6 items-center justify-center" >
+      <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-20" >
         <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
           Main Projects
         </h1>
@@ -32,7 +31,7 @@ export default component$(() => {
             <Card name="SimplyMC" icon="https://www.simplymc.art/icon-192x192.png" github="https://github.com/LuminescentDev/SimplyMC" link="https://simplymc.art">
               A Minecraft Multitool for server owners, developers, and players.
             </Card>
-            <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/Oli-idk/Lumin" link="https://lumin.luminescent.dev/">
+            <Card name="Lumin" icon="https://lumin.luminescent.dev/Lumin.png" github="https://github.com/bwmp/Lumin" link="https://lumin.luminescent.dev/">
               A silly little moon themed bot<br />
               Interactions, Utilities, Fun!
             </Card>
@@ -42,7 +41,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
-      <section class="flex flex-col mx-auto max-w-6xl px-6 items-center" >
+      <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-20" >
         <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
           All Projects
         </h1>
@@ -62,7 +61,7 @@ export default component$(() => {
           </div>
         </div>
       </section>
-      <section class="flex flex-col mx-auto max-w-6xl px-6 items-center" >
+      <section class="flex flex-col gap-3 mx-auto max-w-6xl px-6 items-center justify-center py-20" >
         <h1 class="font-bold text-white text-xl sm:text-3xl mt-10">
           Discontinued Projects
         </h1>

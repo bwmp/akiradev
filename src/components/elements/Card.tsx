@@ -3,7 +3,7 @@ import { LogoGithub, GlobeOutline } from 'qwik-ionicons';
 
 export default component$(({ link, name, icon, github }: any) => {
   return (
-    <div class="flex-1 relative bg-gray-800 border border-gray-700 rounded-xl group transition-all">
+    <div class="flex-1 relative bg-gray-800 rounded-xl group transition-all shadow-lg backdrop-blur-lg bg-luminescent-900/60 hover:bg-luminescent-900/80 border border-luminescent-900">
       <div class="grid rounded-xl absolute w-full h-full bg-gray-900/50 transition opacity-0 group-hover:opacity-100 group-hover:backdrop-blur-sm">
         {link && (
           <a href={link} class="flex flex-col justify-center transition hover:bg-luminescent-500/20 text-white rounded-xl font-bold items-center gap-4">
